@@ -275,38 +275,37 @@ async function searchInterface() {
         <footer>
             <p>&copy; 2024 Workers-Proxy-Docker. 保留所有权利。</p>
         </footer>
-        <script>
-            function performSearch() {
-                const query = document.getElementById('search-input').value;
-                if (query) {
-                    window.location.href = '/search?q=' + encodeURIComponent(query);
-                }
-            }
-        
-            document.getElementById('search-button').addEventListener('click', performSearch);
-            document.getElementById('search-input').addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    performSearch();
-                }
-            });
+	    <script>
+	        function performSearch() {
+	            const query = document.getElementById('search-input').value;
+	            if (query) {
+	                window.location.href = '/search?q=' + encodeURIComponent(query);
+	            }
+	        }
+	    
+	        document.getElementById('search-button').addEventListener('click', performSearch);
+	        document.getElementById('search-input').addEventListener('keypress', function(event) {
+	            if (event.key === 'Enter') {
+	                performSearch();
+	            }
+	        });
 
-            document.querySelectorAll('.tag').forEach(tag => {
-                tag.addEventListener('click', function() {
-                    document.getElementById('search-input').value = this.textContent;
-                    performSearch();
-                });
-            });
+	        document.querySelectorAll('.tag').forEach(tag => {
+	            tag.addEventListener('click', function() {
+	                document.getElementById('search-input').value = this.textContent;
+	                performSearch();
+	            });
+	        });
 
-            document.getElementById('search-input').addEventListener('input', function() {
-                const searchTips = document.getElementById('search-tips');
-                if (this.value.length > 0) {
-                    searchTips.innerHTML = '<p>正在搜索 "' + this.value + '"...</p>';
-                    // 这里可以添加更多的搜索建议逻辑
-                } else {
-                    searchTips.innerHTML = '<p>搜索提示：输入关键词以开始搜索，例如 "nginx"、"mysql:latest" 等。</p>';
-                }
-            });
-        </script>
+	        document.getElementById('search-input').addEventListener('input', function() {
+	            const searchTips = document.getElementById('search-tips');
+	            if (this.value.length > 0) {
+	                searchTips.innerHTML = '<p>输入完成后，请点击搜索按钮或按回车键开始搜索 "' + this.value + '"</p>';
+	            } else {
+	                searchTips.innerHTML = '<p>搜索提示：输入关键词以开始搜索，例如 "nginx"、"mysql:latest" 等。</p>';
+	            }
+	        });
+	    </script>
     </body>
     </html>
     `;
