@@ -85,7 +85,7 @@ async function searchInterface() {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Docker Hub 高级搜索</title>
+        <title>Docker Hub 镜像搜索</title>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
         <style>
             :root {
