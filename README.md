@@ -57,7 +57,7 @@
 
 <table>
     <tr>
-        <td width="50%" align="center"><img src="https://github.com/user-attachments/assets/0dc7501d-e8ea-46ce-b623-8282a91d7369?raw=true"></td>
+        <td width="50%" align="center"><img src="https://github.com/user-attachments/assets/edbb4531-29d6-4165-9f0e-1bb4f489d744?raw=true"></td>
     </tr>
 </table>
 
