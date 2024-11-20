@@ -1,5 +1,3 @@
-// _worker.js
-
 // Docker镜像仓库主机地址
 let hub_host = 'registry-1.docker.io';
 // Docker认证服务器地址
@@ -11,10 +9,17 @@ let 屏蔽爬虫UA = ['netcraft'];
 
 // 根据主机名选择对应的上游地址
 function routeByHosts(host) {
-    // Docker相关的路由
+    // 定义路由表 - 合并了所有路由
     const routes = {
-        "docker": "registry-1.docker.io",
-        "test": "registry-1.docker.io",
+        "quay": "quay.io",
+        "gcr": "gcr.io",
+        "k8s-gcr": "k8s.gcr.io",
+        "k8s": "registry.k8s.io",
+        "ghcr": "ghcr.io",
+        "cloudsmith": "docker.cloudsmith.io",
+        "nvcr": "nvcr.io",
+        // Docker相关
+        "docker": "registry-1.docker.io"
     };
 
     if (host in routes) return [routes[host], false];
