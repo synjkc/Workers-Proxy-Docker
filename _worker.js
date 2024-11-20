@@ -213,6 +213,18 @@ async function searchInterface() {
                 background: var(--secondary-color);
                 color: var(--text-color);
             }
+            
+            footer a {
+                color: #7ee2ff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-weight: 500;
+            }
+            
+            footer a:hover {
+                color: #ffffff;
+                text-decoration: underline;
+            }
             @media (max-width: 768px) {
                 .search-box {
                     flex-direction: column;
@@ -278,7 +290,17 @@ async function searchInterface() {
             </div>
         </div>
         <footer>
-            <p>&copy; 2024 Workers-Proxy-Docker. 保留所有权利。</p>
+            <p style="font-size: 0.875rem;">
+                © <span id="currentYear"></span> 
+                <a 
+                    href="https://github.com/dqzboy/Workers-Proxy-Docker" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                >
+                    Workers-Proxy-Docker
+                </a>
+                项目 | 遵循 MIT 开源协议
+            </p>
         </footer>
 	    <script>
 	        function performSearch() {
@@ -310,6 +332,8 @@ async function searchInterface() {
 	                searchTips.innerHTML = '<p>搜索提示：输入关键词以开始搜索，例如 "nginx"、"mysql:latest" 等。</p>';
 	            }
 	        });
+
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
 	    </script>
     </body>
     </html>
