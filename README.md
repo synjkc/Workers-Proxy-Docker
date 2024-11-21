@@ -98,7 +98,7 @@ docker info | grep -A 10 "Registry Mirrors"
 感谢以下项目的开源的付出：
 [cmliu/CF-Workers-docker.io](https://github.com/cmliu/CF-Workers-docker.io/) 
 
-- 只保留了Docker相关的路由和接口，重搞了镜像搜索页面
+- 重搞了Docker Hub 镜像搜索页面
 
 ---
 
