@@ -225,22 +225,40 @@ async function searchInterface() {
                 color: #ffffff;
                 text-decoration: underline;
             }
-            @media (max-width: 768px) {
-                .search-box {
-                    flex-direction: column;
-                }
-                #search-input, #search-button {
-                    width: 100%;
-                    border-radius: 25px;
-                    margin-bottom: 1rem;
-                }
-                .features {
-                    flex-direction: column;
-                }
-                .feature {
-                    margin-bottom: 1rem;
-                }
-            }
+			.method-container {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .method-container {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .method-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            line-height: 1.8; /* 增加行高，使代码块更易读 */
+        }
+        .note {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #555;
+            font-style: italic;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
         </style>
     </head>
     <body>
@@ -258,6 +276,17 @@ async function searchInterface() {
                     <p>搜索提示：输入关键词以开始搜索，例如 "nginx"、"mysql:latest" 等。</p>
                 </div>
             </div>
+			    <div class="method-container">
+        <div class="method-title">方式一（永久） - 全局配置</div>
+        <pre>echo '{"registry-mirrors": ["https://hub.***.com"]}' | sudo tee /etc/docker/daemon.json > /dev/null
+systemctl daemon-reload
+systemctl restart docker</pre>
+    </div>
+    <div class="method-container">
+        <div class="method-title">方式二（临时） - 直接使用</div>
+        <pre>docker pull hub.***.com/nginx:latest</pre>
+        <div class="note">这里的 nginx:latest 请替换成你需要的镜像和版本</div>
+    </div>
             <div class="popular-searches">
                 <h3>热门搜索</h3>
                 <div class="tags">
